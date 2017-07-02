@@ -5,6 +5,7 @@ RUN apt update && apt install -y --no-install-recommends \
       sudo \
       ca-certificates \
       apt-transport-https \
+      python \
       curl
 
 RUN useradd --create-home --user-group vagrant && \

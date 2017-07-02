@@ -27,13 +27,13 @@ Vagrant.configure("2") do |config|
     end
   end
 
-  vanilla_container config, "elasticsearch-client" do |docker|
-    docker.expose = [9200]
-  end
   (1..4).each do |i|
     vanilla_container config, "elasticsearch-master-#{i}"
   end
   (1..6).each do |i|
     vanilla_container config, "elasticsearch-data-#{i}"
+  end
+  vanilla_container config, "elasticsearch-client" do |docker|
+    docker.expose = [9200]
   end
 end
