@@ -1,0 +1,4 @@
+---
+- include: elasticsearch-masters.yml
+- include: elasticsearch-datas.yml
+- include: elasticsearch-clients.yml

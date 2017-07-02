@@ -1,0 +1,7 @@
+---
+- hosts: elasticsearch-clients
+  vars:
+    master: false
+    data: false
+  roles:
+    - elasticsearch

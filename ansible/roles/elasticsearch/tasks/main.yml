@@ -1,0 +1,24 @@
+---
+- apt_key:
+    url: "https://artifacts.elastic.co/GPG-KEY-elasticsearch"
+
+- apt_repository:
+    repo: deb http://HTTPS///artifacts.elastic.co/packages/5.x/apt stable main
+    update_cache: yes
+
+- apt:
+    name: "{{ item }}"
+  with_items:
+    - elasticsearch
+    - openjdk-8-jre-headless
+  environment:
+    - ES_SKIP_SET_KERNEL_PARAMETERS: "true"
+
+- template:
+    src: elasticsearch.yml.j2
+    dest: /etc/elasticsearch/elasticsearch.yml
+  notify:
+    - restart elasticsearch
+
+- service: name=elasticsearch state=started
+

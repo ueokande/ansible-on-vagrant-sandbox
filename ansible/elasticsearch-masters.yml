@@ -1,0 +1,8 @@
+---
+- hosts: elasticsearch-masters
+  vars:
+    master: true
+    data: false
+  roles:
+    - elasticsearch
+
