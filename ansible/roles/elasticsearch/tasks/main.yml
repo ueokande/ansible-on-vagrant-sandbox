@@ -14,6 +14,10 @@
   environment:
     - ES_SKIP_SET_KERNEL_PARAMETERS: "true"
 
+- file:
+    src: elasticsearch-init
+    dest: /etc/init.d/elasticsearch
+
 - template:
     src: elasticsearch.yml.j2
     dest: /etc/elasticsearch/elasticsearch.yml
