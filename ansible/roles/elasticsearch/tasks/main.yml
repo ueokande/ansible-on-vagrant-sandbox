@@ -14,7 +14,7 @@
   environment:
     - ES_SKIP_SET_KERNEL_PARAMETERS: "true"
 
-- file:
+- copy:
     src: elasticsearch-init
     dest: /etc/init.d/elasticsearch
 
