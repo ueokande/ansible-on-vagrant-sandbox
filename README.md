@@ -30,6 +30,13 @@ Close the repository to local disk:
 ```sh
 git clone https://github.com/ueokande/ansible-vagrant-playground
 ```
+
+Create a network for communications between containers:
+
+```sh
+docker network create elasticsearch
+```
+
 Launch containers with `vagrant up`:
 
 ```sh
